@@ -9,3 +9,5 @@ labels:
       cluster: ${cluster_name}
 resources:
   - ../../../../components/capacitor
+patches:
+  - path: ./patch.yaml
