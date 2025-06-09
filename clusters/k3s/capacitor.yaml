@@ -11,9 +11,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  commonMetadata:
+    labels:
+      environment: example
+      cluster: example
   postBuild:
     substitute:
-      cluster_name: example
       cluster_subdomain: example.com
   dependsOn:
     - name: traefik

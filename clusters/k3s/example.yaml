@@ -11,10 +11,12 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  commonMetadata:
+    labels:
+      environment: example
+      cluster: example
   postBuild:
     substitute:
-      env: example
-      cluster_name: example
       cluster_subdomain: example.com
   # The kustomization can only depend on the kustomization, HelmRelease has its own dependsOn
   # https://fluxcd.io/flux/components/kustomize/kustomizations/#dependencies
