@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: traefik
+resources:
+  - ./namespace.yaml
+  - ./HelmRepository.yaml
+  - ./HelmRelease.yaml
+# https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-in-configmaps-generated-with-kustomize
+configMapGenerator:
+  - name: values-traefik
+    files:
+      - values.yaml=values-traefik.yaml
+configurations:
+  - ./kustomizeconfig.yaml

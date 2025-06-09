@@ -1,0 +1,22 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: example
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./clusters/k3s/apps/example
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  postBuild:
+    substitute:
+      env: example
+      cluster_name: example
+      cluster_subdomain: example.com
+  # The kustomization can only depend on the kustomization, HelmRelease has its own dependsOn
+  # https://fluxcd.io/flux/components/kustomize/kustomizations/#dependencies
+  dependsOn:
+    - name: traefik
