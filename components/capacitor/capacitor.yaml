@@ -48,7 +48,7 @@ metadata:
   name: capacitor-ingress
   namespace: flux-system
 spec:
-  ingressClassName: traefik
+  ingressClassName: ${ingress_class}
   rules:
     - host: capacitor.${cluster_subdomain}
       http:
