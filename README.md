@@ -5,6 +5,20 @@
 
 ## Install
 
+Subsitute the variables with your own
+
+```bash
+flux bootstrap github \
+    --owner $OWNER \
+    --repository $REPOSITORY \
+    --branch $BRANCH \
+    --path ./clusters/$CLUSTER \
+    --components-extra='image-reflector-controller,image-automation-controller' \
+    --read-write-key
+```
+
+Example:
+
 ```bash
 flux bootstrap github \
     --owner BestChinchilla \
