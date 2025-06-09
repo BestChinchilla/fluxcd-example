@@ -1,5 +1,8 @@
 # fluxcd
 
+> [!IMPORTANT]
+> Use this repository as a template for your own FluxCD cluster setup!!!
+
 ## Install
 
 ```bash
